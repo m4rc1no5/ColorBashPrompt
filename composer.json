@@ -1,0 +1,20 @@
+{
+  "name": "m4rc1no5/ColorBashPrompt",
+  "description": "Color your bash commands",
+  "keywords": ["PHP", "Design Patterns"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marcin Zaremba",
+      "homepage": "http://marceen.pl",
+      "email": "marcin.zaremba@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.2"
+  },
+  "autoload": {
+    "psr-0": { "ColorBashPrompt": "" }
+  }
+}
