@@ -1,7 +1,7 @@
 {
   "name": "m4rc1no5/color-bash-prompt",
   "description": "Color your bash commands",
-  "keywords": ["PHP", "Design Patterns"],
+  "keywords": ["PHP", "Bash", "command line", "cmd", "linux", "color"],
   "type": "library",
   "license": "MIT",
   "authors": [
