@@ -1,11 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: marcinos
- * Date: 03.07.15
- * Time: 08:32
- */
 
+/**
+ * Class ColorBashPrompt
+ */
 class ColorBashPrompt {
 
 	const BLACK = 'black';
@@ -76,7 +73,14 @@ class ColorBashPrompt {
 
 	protected $txtrst='0m';    // Text Reset
 
-	public function write($text, $color, $format = "", $reset = true)
+	/**
+	 * @param $text
+	 * @param string $color
+	 * @param string $format
+	 * @param bool|true $reset
+	 * @return string
+	 */
+	public function write($text, $color = ColorBashPrompt::WHITE, $format = "", $reset = true)
 	{
 		//sprawdzamy czy kolor jest w dostepnych kolorach - jesli nie to zwracamy nieprzerobiony string
 		if(! in_array($color, $this->ar_dostepne_kolory))
@@ -84,17 +88,6 @@ class ColorBashPrompt {
 			return $text;
 		}
 
-		$pre = "";
-		if($format != "")
-		{
-			if(in_array($format, $this->ar_dostepne_formaty))
-			{
-				$pre = $format;
-			}
-		}
-
-		//$text_formatted = "\033[" . $this->{$format . $color} . $text . "\033[37m";
-		//echo $format . $color;
 		$text_formatted = $this->opakuj($this->{$format . $color} . $text);
 
 		if($reset)
@@ -105,6 +98,23 @@ class ColorBashPrompt {
 		return $text_formatted;
 	}
 
+	/**
+	 * @param $text
+	 * @param string $color
+	 * @param string $format
+	 * @param bool|true $reset
+	 * @return string
+	 */
+	public function writeln($text, $color = ColorBashPrompt::WHITE, $format = "", $reset = true)
+	{
+		$textln = $text . "\n";
+		return $this->write($textln, $color, $format, $reset);
+	}
+
+	/**
+	 * @param $text
+	 * @return string
+	 */
 	private function opakuj($text)
 	{
 		return "\033[" . $text . "\033[37m";
