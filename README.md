@@ -1,4 +1,7 @@
 # ColorBashPrompt
+
+[![Total Downloads](https://poser.pugx.org/m4rc1no5/color-bash-prompt/downloads)](https://packagist.org/packages/m4rc1no5/color-bash-prompt)
+
 Color your bash commands
 
 Documentation
